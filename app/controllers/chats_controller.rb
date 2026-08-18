@@ -1,6 +1,4 @@
 class ChatsController < ApplicationController
-  before_action :authenticate_user!
-
   def create
     @chat = Chat.new(title: "Untitled")
     @chat.user = current_user

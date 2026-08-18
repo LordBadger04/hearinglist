@@ -1,6 +1,4 @@
 class MessagesController < ApplicationController
-  before_action :authenticate_user!
-
   SYSTEM_PROMPT = <<~PROMPT
     You are a music assistant for hearinglist.
 
