@@ -1,1 +1,11 @@
 <h1>Index</h1>
+
+<ul>
+<% @lists.each do |list| %>
+  <li><%= list.title %><%= link_to " X", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Delete this list ?"} %></li>
+<% end %>
+</ul>
+
+
+<p><%= link_to "Create a new list", new_list_path %></p>
+<%= link_to "Homepage", root_path %>
