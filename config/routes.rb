@@ -14,9 +14,8 @@ Rails.application.routes.draw do
   # root "posts#index"
   root to: "lists#index"
 
-  resources :list, except: [ :edit, :update ]
-  resources :version, only: [ :new, :create ] do
-    resources :song, only: [ :create ]
-    resources :artist, only: [ :create ]
-  end
+  resources :lists, except: [ :edit, :update ]
+  resources :versions, only: [ :new, :create ]
+  resources :songs, only: [ :create ]
+  resources :artists, only: [ :create ]
 end
