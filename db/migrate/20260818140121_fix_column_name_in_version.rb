@@ -1,5 +1,5 @@
 class FixColumnNameInVersion < ActiveRecord::Migration[8.1]
   def change
-    rename_column :version, :type, :style
+    rename_column :versions, :type, :style
   end
 end
