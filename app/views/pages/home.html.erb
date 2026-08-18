@@ -1,1 +1,4 @@
 <h1>Home page</h1>
+<%= form_with url: chats_path, method: :post do %>
+  <%= submit_tag "Start AI chat" %>
+<% end %>
