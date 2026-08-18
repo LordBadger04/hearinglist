@@ -67,7 +67,7 @@ Version.destroy_all
 Artist.destroy_all
 Song.destroy_all
 
-file = File.open "app/assets/data/random_tracks_seed.json"
+file = File.open "app/assets/data/random_tracks_seed copy.json.json"
 tracks = JSON.load file
 
 puts "Creating New Database ....."

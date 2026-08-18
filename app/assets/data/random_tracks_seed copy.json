@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "titre": "Blinding Lights",
+    "artiste": "The Weeknd",
+    "annee": 2020,
+    "style": "studio"
+  },
+  {
+    "id": 2,
+    "titre": "Hotel California",
+    "artiste": "Eagles",
+    "annee": 1977,
+    "style": "live"
+  },
+  {
+    "id": 3,
+    "titre": "Someone Like You",
+    "artiste": "Adele",
+    "annee": 2011,
+    "style": "acoustic"
+  },
+  {
+    "id": 4,
+    "titre": "Shape of You",
+    "artiste": "Ed Sheeran",
+    "annee": 2017,
+    "style": "studio"
+  },
+  {
+    "id": 5,
+    "titre": "Bohemian Rhapsody",
+    "artiste": "Queen",
+    "annee": 1986,
+    "style": "live"
+  },
+  {
+    "id": 6,
+    "titre": "Bad",
+    "artiste": "Billie Eilish",
+    "annee": 2018,
+    "style": "acoustic"
+  },
+  {
+    "id": 7,
+    "titre": "Tears in Heaven",
+    "artiste": "Eric Clapton",
+    "annee": 1992,
+    "style": "acoustic"
+  },
+  {
+    "id": 8,
+    "titre": "Layla",
+    "artiste": "Eric Clapton",
+    "annee": 1992,
+    "style": "live"
+  },
+  {
+    "id": 9,
+    "titre": "Stayin Alive",
+    "artiste": "Bee Gees",
+    "annee": 1977,
+    "style": "studio"
+  },
+  {
+    "id": 10,
+    "titre": "As It Was",
+    "artiste": "Harry Styles",
+    "annee": 2022,
+    "style": "studio"
+  },
+  {
+    "id": 11,
+    "titre": "Uptown Funk",
+    "artiste": "Mark Ronson ft. Bruno Mars",
+    "annee": 2014,
+    "style": "studio"
+  },
+  {
+    "id": 12,
+    "titre": "Smells Like Teen Spirit",
+    "artiste": "Nirvana",
+    "annee": 1991,
+    "style": "studio"
+  },
+  {
+    "id": 13,
+    "titre": "Take On Me",
+    "artiste": "a-ha",
+    "annee": 1985,
+    "style": "acoustic"
+  },
+  {
+    "id": 14,
+    "titre": "Billie Jean",
+    "artiste": "Michael Jackson",
+    "annee": 1983,
+    "style": "live"
+  },
+  {
+    "id": 15,
+    "titre": "Flowers",
+    "artiste": "Miley Cyrus",
+    "annee": 2023,
+    "style": "studio"
+  },
+  {
+    "id": 16,
+    "titre": "Perfect",
+    "artiste": "Ed Sheeran",
+    "annee": 2017,
+    "style": "acoustic"
+  },
+  {
+    "id": 17,
+    "titre": "Rolling in the Deep",
+    "artiste": "Adele",
+    "annee": 2011,
+    "style": "live"
+  },
+  {
+    "id": 18,
+    "titre": "Counting Stars",
+    "artiste": "OneRepublic",
+    "annee": 2013,
+    "style": "studio"
+  },
+  {
+    "id": 19,
+    "titre": "Wake Me Up",
+    "artiste": "Avicii",
+    "annee": 2013,
+    "style": "studio"
+  },
+  {
+    "id": 20,
+    "titre": "Believer",
+    "artiste": "Imagine Dragons",
+    "annee": 2017,
+    "style": "acoustic"
+  },
+  {
+    "id": 21,
+    "titre": "All of Me",
+    "artiste": "John Legend",
+    "annee": 2013,
+    "style": "live"
+  },
+  {
+    "id": 22,
+    "titre": "Radioactive",
+    "artiste": "Imagine Dragons",
+    "annee": 2012,
+    "style": "studio"
+  },
+  {
+    "id": 23,
+    "titre": "Dance Monkey",
+    "artiste": "Tones and I",
+    "annee": 2019,
+    "style": "studio"
+  },
+  {
+    "id": 24,
+    "titre": "Sweet Child O Mine",
+    "artiste": "Guns N Roses",
+    "annee": 1987,
+    "style": "studio"
+  },
+  {
+    "id": 25,
+    "titre": "Another One Bites the Dust",
+    "artiste": "Queen",
+    "annee": 1980,
+    "style": "studio"
+  },
+  {
+    "id": 26,
+    "titre": "Thinking Out Loud",
+    "artiste": "Ed Sheeran",
+    "annee": 2014,
+    "style": "studio"
+  },
+  {
+    "id": 27,
+    "titre": "Shallow",
+    "artiste": "Lady Gaga & Bradley Cooper",
+    "annee": 2018,
+    "style": "live"
+  },
+  {
+    "id": 28,
+    "titre": "Love Yourself",
+    "artiste": "Justin Bieber",
+    "annee": 2015,
+    "style": "acoustic"
+  },
+  {
+    "id": 29,
+    "titre": "Despacito",
+    "artiste": "Luis Fonsi ft. Daddy Yankee",
+    "annee": 2017,
+    "style": "studio"
+  },
+  {
+    "id": 30,
+    "titre": "Thriller",
+    "artiste": "Michael Jackson",
+    "annee": 1982,
+    "style": "studio"
+  }
+]
