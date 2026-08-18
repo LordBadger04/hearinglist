@@ -1,9 +1,7 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+alice_favorites:
+  title: Mes favoris
+  user: alice
 
-one:
-  title: MyString
-  user: one
-
-two:
-  title: MyString
-  user: two
+bob_covers:
+  title: Covers
+  user: bob

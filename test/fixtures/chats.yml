@@ -1,9 +1,7 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+alice_chat:
+  title: Recherche de covers
+  user: alice
 
-one:
-  title: MyString
-  user: one
-
-two:
-  title: MyString
-  user: two
+bob_chat:
+  title: Versions live
+  user: bob
