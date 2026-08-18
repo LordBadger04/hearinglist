@@ -1,11 +1,12 @@
 class ChatsController < ApplicationController
   def create
-    @chat = Chat.new(chat_params)
+    @chat = Chat.new(title: "Untitled")
     @chat.user = current_user
+
     if @chat.save
       redirect_to chat_path(@chat)
     else
-      render :show, status: :unprocessable_entity
+      redirect_to root_path, alert: "Unable to create chat."
     end
   end
 
