@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   resources :lists, except: [ :edit, :update ]
   resources :versions, only: [ :new, :create ]
-  resources :songs, only: [ :create ]
-  resources :artists, only: [ :create ]
+  resources :chats, only: [ :create, :show ] do
+    resources :messages, only: [ :create ]
+  end
 end
