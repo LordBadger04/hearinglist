@@ -15,6 +15,7 @@ class MessagesController < ApplicationController
     @message.role = "user"
 
     if @message.save
+      @chat.generate_title_from_first_message
       response = RubyLLM.chat
         .with_instructions(SYSTEM_PROMPT)
         .ask(@message.content)
