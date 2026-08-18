@@ -1,17 +1,13 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+cohen_studio:
+  url: https://example.com/cohen-hallelujah
+  type: studio
+  year: 1984
+  artist: cohen
+  song: hallelujah
 
-one:
-  version_: MyString
-  url: MyString
-  type: 
-  year: 1
-  artist: one
-  song: one
-
-two:
-  version_: MyString
-  url: MyString
-  type: 
-  year: 1
-  artist: two
-  song: two
+buckley_cover:
+  url: https://example.com/buckley-hallelujah
+  type: cover
+  year: 1994
+  artist: buckley
+  song: hallelujah

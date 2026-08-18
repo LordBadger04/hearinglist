@@ -1,11 +1,9 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+alice_question:
+  role: user
+  content: Quelles sont les meilleures reprises de Hallelujah ?
+  chat: alice_chat
 
-one:
-  role: MyString
-  content: MyText
-  chat: one
-
-two:
-  role: MyString
-  content: MyText
-  chat: two
+alice_answer:
+  role: assistant
+  content: La version de Jeff Buckley est la plus connue.
+  chat: alice_chat
