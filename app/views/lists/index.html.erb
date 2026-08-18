@@ -2,7 +2,8 @@
 
 <ul>
 <% @lists.each do |list| %>
-  <li><%= list.title %><%= link_to " X", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Delete this list ?"} %></li>
+  <li><%= link_to list.title, list_path(list) %>
+  <%= link_to " X", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Delete this list ?"} %></li>
 <% end %>
 </ul>
 
