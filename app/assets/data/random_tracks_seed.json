@@ -64,14 +64,6 @@
     "youtube_url": "https://www.youtube.com/watch?v=liveTrack82abc"
   },
   {
-    "id": 93,
-    "title": "Starboy",
-    "artist": "The Weeknd",
-    "year": 2019,
-    "type": "Studio",
-    "youtube_url": "https://www.youtube.com/watch?v=seedTrack93xyz"
-  },
-  {
     "id": 14,
     "title": "Heart-Shaped Box",
     "artist": "Nirvana",
@@ -110,14 +102,6 @@
     "year": 2019,
     "type": "Studio",
     "youtube_url": "https://www.youtube.com/watch?v=seedTrack64xyz"
-  },
-  {
-    "id": 22,
-    "title": "High and Dry",
-    "artist": "Radiohead",
-    "year": 1998,
-    "type": "Studio",
-    "youtube_url": "https://www.youtube.com/watch?v=seedTrack22xyz"
   },
   {
     "id": 86,
@@ -230,14 +214,6 @@
     "year": 1989,
     "type": "Studio",
     "youtube_url": "https://www.youtube.com/watch?v=seedTrack11xyz"
-  },
-  {
-    "id": 28,
-    "title": "Fix You",
-    "artist": "Coldplay",
-    "year": 1998,
-    "type": "Studio",
-    "youtube_url": "https://www.youtube.com/watch?v=seedTrack28xyz"
   },
   {
     "id": 48,
@@ -760,43 +736,10 @@
     "youtube_url": "https://www.youtube.com/watch?v=acouTrack114def"
   },
   {
-    "id": 88,
-    "title": "Blinding Lights",
-    "artist": "The Weeknd",
-    "year": 2019,
-    "type": "Studio",
-    "youtube_url": "https://www.youtube.com/watch?v=seedTrack88xyz"
-  },
-  {
-    "id": 76,
-    "title": "Don't Look Back in Anger",
-    "artist": "Oasis",
-    "year": 1997,
-    "type": "Studio",
-    "youtube_url": "https://www.youtube.com/watch?v=seedTrack76xyz"
-  },
-  {
-    "id": 45,
-    "title": "Desperado",
-    "artist": "Eagles",
-    "year": 1978,
-    "type": "Studio",
-    "youtube_url": "https://www.youtube.com/watch?v=seedTrack45xyz"
-  },
-  {
-    "id": 84,
-    "title": "Crawling",
-    "artist": "Linkin Park",
-    "year": 2003,
-    "type": "Live",
-    "youtube_url": "https://www.youtube.com/watch?v=liveTrack84abc"
-  },
-  {
-    "id": 89,
-    "title": "Blinding Lights",
-    "artist": "The Weeknd",
-    "year": 2021,
-    "type": "Live",
-    "youtube_url": "https://www.youtube.com/watch?v=liveTrack89abc"
-  }
+  "titre": "Bad",
+  "artiste": "Billie Eilish",
+  "annee": 2018,
+  "style": "acoustic",
+  "lien_youtube": "https://youtube.com"
+}
 ]
