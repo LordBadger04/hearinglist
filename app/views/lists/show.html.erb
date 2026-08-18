@@ -1,1 +1,6 @@
 <h1>Show</h1>
+
+<h2><%= @list.title %></h2>
+
+<p><%= link_to " X", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Delete this list ?"} %></p>
+<%= link_to "Back to lists", lists_path %>
