@@ -11,9 +11,7 @@
                   label: "Playlist name",
                   placeholder: "My favorite live covers" %>
 
-      <%= f.input :image_url,
-                  label: "Image URL",
-                  placeholder: "https://..." %>
+     <%= f.input :photo, as: :file %>
 
       <%= f.submit "Create playlist", class: "btn btn-dark w-100" %>
     <% end %>

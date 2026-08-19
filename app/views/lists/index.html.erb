@@ -16,7 +16,7 @@
         <div class="list_card"
      style="background-image:
             linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
-                    url('<%= list.image_url %>')">
+                    url(<%= cl_image_path list.photo.key%>)">
           <span><%= list.title %></span>
         </div>
       <% end %>
