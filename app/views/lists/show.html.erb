@@ -1,6 +1,10 @@
-<h1>Show</h1>
 
-<h2><%= @list.title %></h2>
 
-<p><%= link_to " X", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Delete this list ?"} %></p>
-<%= link_to "Back to lists", lists_path %>
+<div class="versions_container">
+  <%= render "shared/banner", banner: {name: @list.title, image_key: @list.photo.key} %>
+  <%= link_to " Delete list", list_path(@list),
+      data: {turbo_method: :delete,
+      turbo_confirm: "Delete this list ?"},
+      class: "btn btn-danger btn_top_right" %>
+  <%= link_to "Back to lists", lists_path, class: "btn btn-danger btn btn_top_left" %>
+</div>
