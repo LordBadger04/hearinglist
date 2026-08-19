@@ -1,0 +1,17 @@
+<div class="container auth-container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-5">
+      <div class="card auth-card">
+        <div class="card-body">
+          <p class="auth-eyebrow">Add a bookmark</p>
+
+          <%= simple_form_for [@list, @bookmark] do |f| %>
+            <%= f.association :version %>
+            <%= f.button :submit, "Create bookmark", class: "btn btn-primary w-100 mt-3" %>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,8 @@
-<h1>Show</h1>
+<h2 class="text-center"><%= @list.title %></h2>
 
-<h2><%= @list.title %></h2>
+<p><%= link_to "Delete this list", list_path(@list),
+    data: {turbo_method: :delete, turbo_confirm: "Delete this list ?"},
+    class: "btn btn-warning m-2" %></p>
 
-<p><%= link_to " X", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Delete this list ?"} %></p>
-<%= link_to "Back to lists", lists_path %>
+<p><%= link_to "Create a bookmark", new_list_bookmark_path(@list.id), class: "btn btn-success m-2" %></p>
+<p><%= link_to "Back to lists", lists_path, class: "btn btn-primary m-2" %><p>
