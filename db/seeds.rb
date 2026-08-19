@@ -14,9 +14,9 @@ require 'uri'
 API_KEY = 'AIzaSyBZQcZK5FS5YQTcGeYMdeeBlqxNAaEJXhs'
 
 # Method de generation de l'url
-def get_video_url(artiste, titre, year, style)
+def get_video_url(artist, title, year, style)
 
-requete_recherche = "#{artiste} #{titre} #{year} #{style}"
+requete_recherche = "#{artist} #{title} #{year} #{style}"
   # CORRECTION ICI : L'URL complète attendue par l'API Google
   base_url = "https://www.googleapis.com/youtube/v3/search"
 
@@ -44,11 +44,11 @@ requete_recherche = "#{artiste} #{titre} #{year} #{style}"
       end
     else
       # Si l'API renvoie autre chose que 200, on affiche le corps de l'erreur pour débugger
-      puts "Erreur API (#{response.code}) pour #{titre} : #{response.body}"
+      puts "Erreur API (#{response.code}) pour #{title} : #{response.body}"
     end
     nil
   rescue => e
-    puts "Erreur réseau lors de la requête pour #{titre} : #{e.message}"
+    puts "Erreur réseau lors de la requête pour #{title} : #{e.message}"
     nil
   end
 end
@@ -64,13 +64,11 @@ tracks = JSON.load file
 puts "Creating New Database ....."
 
 tracks.each do |track|
-  title = track["titre"]
-  name = track["artiste"]
-  year = track["annee"]
+  title = track["title"]
+  name = track["artist"]
+  year = track["year"]
   style = track["style"]
-  p year
-  p name
-  p title
+
   # On determine si la song est deja repertoriée
   if Song.find_by(title: title) == nil
     newSong = Song.new(title: title)

@@ -1,212 +1,212 @@
 [
   {
     "id": 1,
-    "titre": "Blinding Lights",
-    "artiste": "The Weeknd",
-    "annee": 2020,
+    "title": "Blinding Lights",
+    "artist": "The Weeknd",
+    "year": 2020,
     "style": "studio"
   },
   {
     "id": 2,
-    "titre": "Hotel California",
-    "artiste": "Eagles",
-    "annee": 1977,
+    "title": "Hotel California",
+    "artist": "Eagles",
+    "year": 1977,
     "style": "live"
   },
   {
     "id": 3,
-    "titre": "Someone Like You",
-    "artiste": "Adele",
-    "annee": 2011,
+    "title": "Someone Like You",
+    "artist": "Adele",
+    "year": 2011,
     "style": "acoustic"
   },
   {
     "id": 4,
-    "titre": "Shape of You",
-    "artiste": "Ed Sheeran",
-    "annee": 2017,
+    "title": "Shape of You",
+    "artist": "Ed Sheeran",
+    "year": 2017,
     "style": "studio"
   },
   {
     "id": 5,
-    "titre": "Bohemian Rhapsody",
-    "artiste": "Queen",
-    "annee": 1986,
+    "title": "Bohemian Rhapsody",
+    "artist": "Queen",
+    "year": 1986,
     "style": "live"
   },
   {
     "id": 6,
-    "titre": "Bad",
-    "artiste": "Billie Eilish",
-    "annee": 2018,
+    "title": "Bad",
+    "artist": "Billie Eilish",
+    "year": 2018,
     "style": "acoustic"
   },
   {
     "id": 7,
-    "titre": "Tears in Heaven",
-    "artiste": "Eric Clapton",
-    "annee": 1992,
+    "title": "Tears in Heaven",
+    "artist": "Eric Clapton",
+    "year": 1992,
     "style": "acoustic"
   },
   {
     "id": 8,
-    "titre": "Layla",
-    "artiste": "Eric Clapton",
-    "annee": 1992,
+    "title": "Layla",
+    "artist": "Eric Clapton",
+    "year": 1992,
     "style": "live"
   },
   {
     "id": 9,
-    "titre": "Stayin Alive",
-    "artiste": "Bee Gees",
-    "annee": 1977,
+    "title": "Stayin Alive",
+    "artist": "Bee Gees",
+    "year": 1977,
     "style": "studio"
   },
   {
     "id": 10,
-    "titre": "As It Was",
-    "artiste": "Harry Styles",
-    "annee": 2022,
+    "title": "As It Was",
+    "artist": "Harry Styles",
+    "year": 2022,
     "style": "studio"
   },
   {
     "id": 11,
-    "titre": "Uptown Funk",
-    "artiste": "Mark Ronson ft. Bruno Mars",
-    "annee": 2014,
+    "title": "Uptown Funk",
+    "artist": "Mark Ronson ft. Bruno Mars",
+    "year": 2014,
     "style": "studio"
   },
   {
     "id": 12,
-    "titre": "Smells Like Teen Spirit",
-    "artiste": "Nirvana",
-    "annee": 1991,
+    "title": "Smells Like Teen Spirit",
+    "artist": "Nirvana",
+    "year": 1991,
     "style": "studio"
   },
   {
     "id": 13,
-    "titre": "Take On Me",
-    "artiste": "a-ha",
-    "annee": 1985,
+    "title": "Take On Me",
+    "artist": "a-ha",
+    "year": 1985,
     "style": "acoustic"
   },
   {
     "id": 14,
-    "titre": "Billie Jean",
-    "artiste": "Michael Jackson",
-    "annee": 1983,
+    "title": "Billie Jean",
+    "artist": "Michael Jackson",
+    "year": 1983,
     "style": "live"
   },
   {
     "id": 15,
-    "titre": "Flowers",
-    "artiste": "Miley Cyrus",
-    "annee": 2023,
+    "title": "Flowers",
+    "artist": "Miley Cyrus",
+    "year": 2023,
     "style": "studio"
   },
   {
     "id": 16,
-    "titre": "Perfect",
-    "artiste": "Ed Sheeran",
-    "annee": 2017,
+    "title": "Perfect",
+    "artist": "Ed Sheeran",
+    "year": 2017,
     "style": "acoustic"
   },
   {
     "id": 17,
-    "titre": "Rolling in the Deep",
-    "artiste": "Adele",
-    "annee": 2011,
+    "title": "Rolling in the Deep",
+    "artist": "Adele",
+    "year": 2011,
     "style": "live"
   },
   {
     "id": 18,
-    "titre": "Counting Stars",
-    "artiste": "OneRepublic",
-    "annee": 2013,
+    "title": "Counting Stars",
+    "artist": "OneRepublic",
+    "year": 2013,
     "style": "studio"
   },
   {
     "id": 19,
-    "titre": "Wake Me Up",
-    "artiste": "Avicii",
-    "annee": 2013,
+    "title": "Wake Me Up",
+    "artist": "Avicii",
+    "year": 2013,
     "style": "studio"
   },
   {
     "id": 20,
-    "titre": "Believer",
-    "artiste": "Imagine Dragons",
-    "annee": 2017,
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "year": 2017,
     "style": "acoustic"
   },
   {
     "id": 21,
-    "titre": "All of Me",
-    "artiste": "John Legend",
-    "annee": 2013,
+    "title": "All of Me",
+    "artist": "John Legend",
+    "year": 2013,
     "style": "live"
   },
   {
     "id": 22,
-    "titre": "Radioactive",
-    "artiste": "Imagine Dragons",
-    "annee": 2012,
+    "title": "Radioactive",
+    "artist": "Imagine Dragons",
+    "year": 2012,
     "style": "studio"
   },
   {
     "id": 23,
-    "titre": "Dance Monkey",
-    "artiste": "Tones and I",
-    "annee": 2019,
+    "title": "Dance Monkey",
+    "artist": "Tones and I",
+    "year": 2019,
     "style": "studio"
   },
   {
     "id": 24,
-    "titre": "Sweet Child O Mine",
-    "artiste": "Guns N Roses",
-    "annee": 1987,
+    "title": "Sweet Child O Mine",
+    "artist": "Guns N Roses",
+    "year": 1987,
     "style": "studio"
   },
   {
     "id": 25,
-    "titre": "Another One Bites the Dust",
-    "artiste": "Queen",
-    "annee": 1980,
+    "title": "Another One Bites the Dust",
+    "artist": "Queen",
+    "year": 1980,
     "style": "studio"
   },
   {
     "id": 26,
-    "titre": "Thinking Out Loud",
-    "artiste": "Ed Sheeran",
-    "annee": 2014,
+    "title": "Thinking Out Loud",
+    "artist": "Ed Sheeran",
+    "year": 2014,
     "style": "studio"
   },
   {
     "id": 27,
-    "titre": "Shallow",
-    "artiste": "Lady Gaga & Bradley Cooper",
-    "annee": 2018,
+    "title": "Shallow",
+    "artist": "Lady Gaga & Bradley Cooper",
+    "year": 2018,
     "style": "live"
   },
   {
     "id": 28,
-    "titre": "Love Yourself",
-    "artiste": "Justin Bieber",
-    "annee": 2015,
+    "title": "Love Yourself",
+    "artist": "Justin Bieber",
+    "year": 2015,
     "style": "acoustic"
   },
   {
     "id": 29,
-    "titre": "Despacito",
-    "artiste": "Luis Fonsi ft. Daddy Yankee",
-    "annee": 2017,
+    "title": "Despacito",
+    "artist": "Luis Fonsi ft. Daddy Yankee",
+    "year": 2017,
     "style": "studio"
   },
   {
     "id": 30,
-    "titre": "Thriller",
-    "artiste": "Michael Jackson",
-    "annee": 1982,
+    "title": "Thriller",
+    "artist": "Michael Jackson",
+    "year": 1982,
     "style": "studio"
   }
 ]
