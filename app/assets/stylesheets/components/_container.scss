@@ -1,3 +1,10 @@
 .versions_container {
   position: relative;
 }
+
+.container_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em auto
+}
