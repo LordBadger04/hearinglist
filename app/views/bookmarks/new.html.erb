@@ -6,7 +6,9 @@
           <p class="auth-eyebrow">Add a bookmark</p>
 
           <%= simple_form_for [@list, @bookmark] do |f| %>
-            <%= f.association :version %>
+            <%= f.association :version,
+                              label: "Pick a track",
+                              label_method: ->(version) { version.song.title }%>
             <%= f.button :submit, "Create bookmark", class: "btn btn-primary w-100 mt-3" %>
           <% end %>
 
