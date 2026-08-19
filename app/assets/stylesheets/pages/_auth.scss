@@ -1,0 +1,119 @@
+// Devise auth pages (log in / sign up)
+
+.auth-container {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding-block: 3rem;
+
+  // .row est un flex-item ici : sans width, il se retracte a son contenu
+  > .row {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}
+
+.auth-card {
+  border: 0;
+  border-radius: $border-radius-xxl;
+  box-shadow: 0 1px 2px rgba($gray, 0.04),
+              0 12px 32px rgba($gray, 0.08);
+  overflow: hidden;
+
+  // Thin accent bar on top of the card
+  &::before {
+    content: "";
+    display: block;
+    height: 4px;
+    background: linear-gradient(90deg, $primary, $green);
+  }
+
+  .card-body {
+    padding: 2.5rem 2rem 2rem;
+  }
+}
+
+.auth-eyebrow {
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba($gray, 0.45);
+}
+
+.auth-title {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+// simple_form / Bootstrap inputs
+.auth-card {
+  .form-label,
+  label.form-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: rgba($gray, 0.7);
+  }
+
+  .form-control {
+    padding: 0.75rem 1rem;
+    border-color: rgba($gray, 0.15);
+    border-radius: $border-radius-lg;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 0 4px rgba($primary, 0.15);
+    }
+  }
+
+  .btn-primary {
+    padding-block: 0.75rem;
+    border-radius: $border-radius-lg;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    transition: transform 150ms ease, box-shadow 150ms ease;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba($primary, 0.3);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+.auth-links {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba($gray, 0.08);
+  text-align: center;
+
+  p {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+
+    &:last-child { margin-bottom: 0; }
+  }
+
+  a {
+    color: $primary;
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-card .btn-primary,
+  .auth-card .form-control {
+    transition: none;
+
+    &:hover { transform: none; }
+  }
+}
