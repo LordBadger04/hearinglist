@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   # root "posts#index"
   root to: "pages#home"
 
-  resources :lists, except: [ :edit, :update ]
+  resources :lists, except: [ :edit, :update ] do
+    resources :bookmarks, only: [ :new, :create ]
+  end
   resources :versions, only: [ :new, :create ]
   resources :chats, only: [ :create, :show ] do
     resources :messages, only: [ :create ]
