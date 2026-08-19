@@ -1,4 +1,9 @@
 <h1>Home page</h1>
 <%= form_with url: chats_path, method: :post do %>
-  <%= submit_tag "Start AI chat" %>
+  <%= submit_tag "Start AI chat", class: "btn btn-success"%>
+<% end %>
+<% if user_signed_in? %>
+    <%= link_to "All my lists", lists_path, class: "btn btn-success mx-2" %>
+<% else %>
+    <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
 <% end %>

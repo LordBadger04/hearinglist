@@ -1,0 +1,8 @@
+<%= simple_form_for [chat, message] do |f| %>
+  <%= f.input :content,
+              label: "Ask Hearinglist",
+              required: true,
+              placeholder: "Ask about a song, artist or live cover..." %>
+
+  <%= f.button :submit, "Ask AI", class: "btn btn-primary" %>
+<% end %>
