@@ -1,7 +1,7 @@
-.btn_top_right{
+.btn_top_right {
   position: absolute;
-  top: 50px;
-  right: 50px;
+  right: 2rem;
+  top: 2rem;
 }
 
 .btn_top_left {
@@ -9,12 +9,4 @@
   top: 50px;
   left: 50px;
   color: white
-}
-
-.delete_btn{
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  opacity: 0;
-  transition: all 0.3s ease;
 }

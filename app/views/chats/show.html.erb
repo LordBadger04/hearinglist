@@ -1,10 +1,13 @@
-<%# <h1>show chat </h1> %>
-<h1 id="chat_title"><%= @chat.title %></h1>
+<div class="chat-page">
+  <div class="chat-container">
+    <h1 id="chat_title" class="chat-title"><%= @chat.title %></h1>
 
-<div id="messages">
-  <%= render "messages/messages", messages: @chat.messages %>
-</div>
+    <div id="messages" class="chat-messages">
+      <%= render "messages/messages", messages: @chat.messages %>
+    </div>
 
-<div id="new_message_container">
-  <%= render "messages/form", chat: @chat, message: @message %>
+    <div id="new_message_container" class="chat-form-container">
+      <%= render "messages/form", chat: @chat, message: @message %>
+    </div>
+  </div>
 </div>

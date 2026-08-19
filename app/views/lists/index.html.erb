@@ -1,23 +1,34 @@
 <div class="banner"
-    style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),
-                              url('https://www.shutterstock.com/image-photo/detailed-view-numbered-blue-cinema-600w-2710706251.jpg');">
-    <h1>All my playlists</h1>
-    <%= link_to "Create a new list", new_list_path, class: "btn btn-success btn_top_right" %>
+    style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                              url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+  <h1>All my playlists</h1>
+
+  <%= link_to "Create a new list",
+              new_list_path,
+              class: "btn btn-dark btn_top_right" %>
 </div>
 
 <div class="list_cards">
-
   <% @lists.each do |list| %>
     <div class="list_card_container">
-      <%= link_to list_path(list) do%>
-          <div class="list_card"
-                style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                        url('<%= list.image_url %>')">
-          <%= list.title %>
+
+      <%= link_to list_path(list), class: "text-decoration-none" do %>
+        <div class="list_card"
+     style="background-image:
+            linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+                    url('<%= list.image_url %>')">
+          <span><%= list.title %></span>
         </div>
       <% end %>
-      <%= link_to " X", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Delete this list ?"}, class: "delete_btn" %>
+
+      <%= link_to "×",
+                  list_path(list),
+                  data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Delete this list?"
+                  },
+                  class: "delete_btn" %>
+
     </div>
   <% end %>
-
 </div>

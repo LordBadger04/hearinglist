@@ -1,6 +1,9 @@
-<p>
-  <strong>
-    <%= message.role == "user" ? current_user.email.split("@").first : message.role %>:
-  </strong>
-  <%= message.content %>
-</p>
+<div class="chat-message <%= message.role == "user" ? "chat-message-user" : "chat-message-assistant" %>">
+  <div class="chat-bubble">
+    <strong>
+      <%= message.role == "user" ? current_user.email.split("@").first : "HearingList AI" %>
+    </strong>
+
+    <p><%= message.content %></p>
+  </div>
+</div>

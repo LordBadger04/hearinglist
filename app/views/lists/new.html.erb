@@ -1,7 +1,25 @@
-<h1>New</h1>
+<div class="new-list-page">
+  <div class="new-list-card">
+    <h1>Create a new playlist</h1>
 
-<%= simple_form_for @list do |f| %>
-<%= f.input :title %>
-<%= f.input :image_url%>
-<%= f.submit %>
-<% end %>
+    <p class="new-list-subtitle">
+      Give your playlist a name and an image.
+    </p>
+
+    <%= simple_form_for @list do |f| %>
+      <%= f.input :title,
+                  label: "Playlist name",
+                  placeholder: "My favorite live covers" %>
+
+      <%= f.input :image_url,
+                  label: "Image URL",
+                  placeholder: "https://..." %>
+
+      <%= f.submit "Create playlist", class: "btn btn-dark w-100" %>
+    <% end %>
+
+    <%= link_to "Back to my playlists",
+                lists_path,
+                class: "new-list-back" %>
+  </div>
+</div>

@@ -1,6 +1,27 @@
-<h1>Show</h1>
+<div class="list-show-page">
+  <div class="list-show-header">
+    <div>
+      <p class="list-show-label">Playlist</p>
+      <h1><%= @list.title %></h1>
+    </div>
 
-<h2><%= @list.title %></h2>
+    <div class="list-show-actions">
+      <%= link_to "Back to lists", lists_path, class: "btn btn-outline-dark" %>
 
-<p><%= link_to " X", list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Delete this list ?"} %></p>
-<%= link_to "Back to lists", lists_path %>
+      <%= link_to "Delete",
+                  list_path(@list),
+                  data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Delete this list?"
+                  },
+                  class: "btn btn-dark" %>
+    </div>
+  </div>
+
+  <div class="list-show-empty">
+    <h2>Your saved songs will appear here</h2>
+    <p>
+      Add songs and live covers to this playlist from HearingList.
+    </p>
+  </div>
+</div>
