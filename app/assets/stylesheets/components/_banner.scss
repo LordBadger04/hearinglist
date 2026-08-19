@@ -21,3 +21,13 @@
   justify-content: center;
   align-items: center;
 }
+
+.banner--sm {
+  height: 220px;
+  align-items: flex-start;
+  padding-top: 3em;
+
+  h1 {
+    font-size: 2.75rem;
+  }
+}

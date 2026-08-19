@@ -1,7 +1,29 @@
-<h1>New</h1>
+<div class="banner banner--sm"
+     style="background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+                             url('https://www.shutterstock.com/image-photo/detailed-view-numbered-blue-cinema-600w-2710706251.jpg');">
+  <h1>New playlist</h1>
+</div>
 
-<%= simple_form_for @list do |f| %>
-<%= f.input :title %>
-<%= f.input :photo, as: :file %>
-<%= f.submit %>
-<% end %>
+<section class="form_card" aria-labelledby="new-list-heading">
+  <h2 id="new-list-heading" class="form_card__title">Create your playlist</h2>
+  <p class="form_card__subtitle">Give it a name and a cover image, then start adding tracks.</p>
+
+  <%= simple_form_for @list, html: { class: "form_card__form" } do |f| %>
+    <%= f.error_notification message: "Something went wrong, please check the fields below." %>
+
+    <%= f.input :title,
+                label: "Playlist title",
+                placeholder: "e.g. Movie covers",
+                input_html: { autofocus: true } %>
+
+    <%= f.input :photo,
+                as: :file,
+                label: "Cover image",
+                hint: "JPG or PNG. Leave it empty for a plain cover." %>
+
+    <div class="form_card__actions">
+      <%= f.submit "Create playlist", class: "btn btn-success" %>
+      <%= link_to "Cancel", lists_path, class: "form_card__cancel" %>
+    </div>
+  <% end %>
+</section>
