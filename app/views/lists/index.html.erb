@@ -1,12 +1,28 @@
-<h1>Index</h1>
+<div class="banner"
+    style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),
+                              url('https://www.shutterstock.com/image-photo/detailed-view-numbered-blue-cinema-600w-2710706251.jpg');">
+    <h1>Hearing List</h1>
+</div>
 
-<ul>
-<% @lists.each do |list| %>
-  <li><%= link_to list.title, list_path(list) %>
-  <%= link_to " X", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Delete this list ?"} %></li>
-<% end %>
-</ul>
+<h1>All my playlists</h1>
+
+<div class="list_cards">
+
+  <% @lists.each do |list| %>
+    <div class="list_card_container">
+      <%= link_to list_path(list) do%>
+          <div class="list_card"
+                style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+                        url('<%= list.image_url %>')">
+          <%= list.title %>
+        </div>
+      <% end %>
+      <%= link_to " X", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Delete this list ?"}, class: "delete_btn" %>
+    </div>
+  <% end %>
+
+</div>
 
 
-<p><%= link_to "Create a new list", new_list_path %></p>
-<%= link_to "Homepage", root_path %>
+<%= link_to "Create a new list", new_list_path, class: "btn btn-success btn_top_right" %>
+<%= link_to "Homepage", root_path, class: "btn btn-success btn_top_left" %>
