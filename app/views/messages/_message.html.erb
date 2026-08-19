@@ -1,6 +1,6 @@
 <p>
   <strong>
-    <%= message.role == "user" ? current_user.username : message.role %>:
+    <%= message.role == "user" ? current_user.email.split("@").first : message.role %>:
   </strong>
   <%= message.content %>
 </p>
