@@ -1,22 +1,10 @@
 <%# <h1>show chat </h1> %>
-<h1><%= @chat.title %></h1>
+<h1 id="chat_title"><%= @chat.title %></h1>
 
 <div id="messages">
-  <% @chat.messages.each do |message| %>
-    <p>
-      <strong><%= message.role %>:</strong>
-      <%= message.content %>
-    </p>
-  <% end %>
+  <%= render "messages/messages", messages: @chat.messages %>
 </div>
 
 <div id="new_message_container">
-  <%= simple_form_for [@chat, @message] do |f| %>
-    <%= f.input :content,
-                label: "Ask Hearinglist",
-                required: true,
-                placeholder: "Ask about a song, artist or live cover..." %>
-
-    <%= f.button :submit, "Ask AI", class: "btn btn-primary" %>
-  <% end %>
+  <%= render "messages/form", chat: @chat, message: @message %>
 </div>

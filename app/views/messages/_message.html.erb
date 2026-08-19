@@ -1,0 +1,6 @@
+<p>
+  <strong>
+    <%= message.role == "user" ? current_user.username : message.role %>:
+  </strong>
+  <%= message.content %>
+</p>
