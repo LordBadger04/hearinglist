@@ -1,10 +1,9 @@
 <div class="banner"
     style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),
                               url('https://www.shutterstock.com/image-photo/detailed-view-numbered-blue-cinema-600w-2710706251.jpg');">
-    <h1>Hearing List</h1>
+    <h1>All my playlists</h1>
+    <%= link_to "Create a new list", new_list_path, class: "btn btn-success btn_top_right" %>
 </div>
-
-<h1>All my playlists</h1>
 
 <div class="list_cards">
 
@@ -24,5 +23,5 @@
 </div>
 
 
-<%= link_to "Create a new list", new_list_path, class: "btn btn-success btn_top_right" %>
+
 <%= link_to "Homepage", root_path, class: "btn btn-success btn_top_left" %>
