@@ -1,0 +1,49 @@
+.new-list-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  padding: 3rem 1rem;
+}
+
+.new-list-card {
+  width: 100%;
+  max-width: 520px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.new-list-card h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.new-list-subtitle {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.new-list-card .form-control {
+  border-radius: 8px;
+}
+
+.new-list-card .btn {
+  margin-top: 0.5rem;
+  border-radius: 8px;
+}
+
+.new-list-back {
+  display: block;
+  margin-top: 1.2rem;
+  text-align: center;
+  color: #555;
+  text-decoration: none;
+}
+
+.new-list-back:hover {
+  color: #111;
+}

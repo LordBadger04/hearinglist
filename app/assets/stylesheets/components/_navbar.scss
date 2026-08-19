@@ -1,12 +1,21 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.hearing-navbar {
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  padding: 0.9rem 0;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.hearing-navbar-brand {
+  color: #222;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.hearing-navbar-brand:hover {
+  color: #222;
+}
+
+.hearing-navbar .btn {
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
 }

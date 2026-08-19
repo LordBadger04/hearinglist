@@ -1,9 +1,28 @@
-<h1>Home page</h1>
-<%= form_with url: chats_path, method: :post do %>
-  <%= submit_tag "Start AI chat", class: "btn btn-success"%>
-<% end %>
-<% if user_signed_in? %>
-    <%= link_to "All my lists", lists_path, class: "btn btn-success mx-2" %>
-<% else %>
-    <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
-<% end %>
+<section class="home">
+  <div class="home-content">
+    <h1>Welcome to HearingList</h1>
+
+    <p>
+      Discover songs, artists and live covers with our AI assistant,
+      then save your favorites into your own lists.
+    </p>
+
+    <% if user_signed_in? %>
+      <%= link_to "All my lists", lists_path, class: "btn btn-dark me-2" %>
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class: "btn btn-dark" %>
+    <% end %>
+  </div>
+
+  <div class="home-card">
+    <h2>Discover new versions</h2>
+
+    <p>
+      Ask HearingList about a song or an artist and explore live covers.
+    </p>
+
+    <div class="music-icon">
+      ♪
+    </div>
+  </div>
+</section>
