@@ -1,12 +1,15 @@
-<nav class="navbar p-1 border-bottom sticky-top">
+<nav class="navbar border-bottom sticky-top">
   <div class="container-fluid">
     <div class="title">
     <h2><%= link_to "HearingList", root_path, class: "text-decoration-none text-black" %></h2>
     </div>
     <% if user_signed_in? %>
+      <div class="d-flex">
+        <%= form_with url: chats_path, method: :post do %>
+          <%= submit_tag "Start AI chat", class: "btn btn-success"%>
+        <% end %>
         <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-danger mx-2" %>
-    <% else %>
-        <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+      </div>
     <% end %>
   </div>
 </nav>
