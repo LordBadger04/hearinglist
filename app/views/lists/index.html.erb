@@ -12,7 +12,7 @@
       <%= link_to list_path(list) do%>
           <div class="list_card"
                 style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-                        url('<%= list.image_url %>')">
+                        url(<%= cl_image_path list.photo.key%>)">
           <%= list.title %>
         </div>
       <% end %>

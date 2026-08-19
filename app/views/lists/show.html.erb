@@ -1,8 +1,12 @@
-<h2 class="text-center"><%= @list.title %></h2>
-
-<p><%= link_to "Delete this list", list_path(@list),
-    data: {turbo_method: :delete, turbo_confirm: "Delete this list ?"},
-    class: "btn btn-warning m-2" %></p>
-
-<p><%= link_to "Create a bookmark", new_list_bookmark_path(@list.id), class: "btn btn-success m-2" %></p>
-<p><%= link_to "Back to lists", lists_path, class: "btn btn-primary m-2" %><p>
+<div class="versions_container">
+  <%= render "shared/banner", banner: {name: @list.title, image_key: @list.photo.key} %>
+  <%= link_to " Delete list", list_path(@list),
+      data: {turbo_method: :delete,
+      turbo_confirm: "Delete this list ?"},
+      class: "btn btn-danger btn_top_right" %>
+  <%= link_to "Back to lists", lists_path, class: "btn btn-danger btn btn_top_left" %>
+  <div class="container_center">
+    <%= link_to "Create a bookmark", new_list_bookmark_path(@list.id), class: "btn btn-success " %>
+  </div>
+</div>
+<div class="test"></div>
