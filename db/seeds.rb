@@ -14,18 +14,9 @@ require 'uri'
 API_KEY = 'AIzaSyBZQcZK5FS5YQTcGeYMdeeBlqxNAaEJXhs'
 
 # Method de generation de l'url
-def get_url(artiste, titre, year)
-  mots_cles_style = case style.to_s.downcase
-  when 'studio'
-    "album version"
-  when 'live'
-    "Live Performance"
-  when 'acoustic'
-    "Acoustic"
-  else
-    ""
-  end
-requete_recherche = "#{artiste} #{titre} #{mots_cles_style} -tutorial -lyrics -karaoke"
+def get_video_url(artiste, titre, year, style)
+
+requete_recherche = "#{artiste} #{titre} #{year} #{style}"
   # CORRECTION ICI : L'URL complète attendue par l'API Google
   base_url = "https://www.googleapis.com/youtube/v3/search"
 
@@ -67,15 +58,19 @@ Version.destroy_all
 Artist.destroy_all
 Song.destroy_all
 
-file = File.open "app/assets/data/random_tracks_seed copy.json.json"
+file = File.open "app/assets/data/random_tracks_seed_copy.json"
 tracks = JSON.load file
 
 puts "Creating New Database ....."
 
 tracks.each do |track|
-  title = track["title"]
-  name = track["artist"]
-
+  title = track["titre"]
+  name = track["artiste"]
+  year = track["annee"]
+  style = track["style"]
+  p year
+  p name
+  p title
   # On determine si la song est deja repertoriée
   if Song.find_by(title: title) == nil
     newSong = Song.new(title: title)
@@ -95,9 +90,9 @@ tracks.each do |track|
   end
 
   # On genere le lien youtube de la version
-  newLink = get_url(name, title, track["year"])
+  newLink = get_video_url(name, title, year, style)
 
-  newVersion = Version.new(style: track["type"], year: track["year"], version_url: newLink)
+  newVersion = Version.new(style: style, year: year, version_url: newLink)
   newVersion.song = newSong
   newVersion.artist = newArtist
   newVersion.save!
