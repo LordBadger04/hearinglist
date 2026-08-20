@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
       When you use the cover search tool, do not include any URLs or markdown links in your
         reply — the results are displayed automatically below your message.
         Just introduce them in one short sentence.
-
+    - Create an artist if the user ask. Do not create multiple artists.
     Answer clearly and concisely.
   PROMPT
 
@@ -28,6 +28,8 @@ class MessagesController < ApplicationController
       build_conversation_history
 
       @ruby_llm_chat.with_tool(@tool)
+      @ruby_llm_chat.with_tool(CreateArtistTool)
+
 
       response = @ruby_llm_chat
         .with_instructions(SYSTEM_PROMPT)
