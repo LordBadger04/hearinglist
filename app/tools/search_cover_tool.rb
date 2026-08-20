@@ -2,7 +2,8 @@ require "json"
 require "net/http"
 require "uri"
 
-API_KEY = "AIzaSyBZQcZK5FS5YQTcGeYMdeeBlqxNAaEJXhs"
+#API_KEY = "AIzaSyBZQcZK5FS5YQTcGeYMdeeBlqxNAaEJXhs"
+API_KEY = "AIzaSyBMdktqJSP5gKDX7yRbyBbboxQjoWthpIA"
 
 class SearchCoverTool < RubyLLM::Tool
   description "Searches song cover by title."
