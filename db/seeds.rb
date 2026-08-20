@@ -15,8 +15,8 @@ API_KEY = 'AIzaSyBZQcZK5FS5YQTcGeYMdeeBlqxNAaEJXhs'
 
 # Method de generation de l'url
 def get_video_url(artist, title, year, style)
+  requete_recherche = "#{title} #{style}"
 
-requete_recherche = "#{artist} #{title} #{year} #{style}"
   # CORRECTION ICI : L'URL complète attendue par l'API Google
   base_url = "https://www.googleapis.com/youtube/v3/search"
 
@@ -26,7 +26,7 @@ requete_recherche = "#{artist} #{title} #{year} #{style}"
     q: requete_recherche,
     type: 'video',
     videoCategoryId: '10',
-    maxResults: 1,
+    maxResults: 2,
     key: API_KEY
   })
 
@@ -35,12 +35,19 @@ requete_recherche = "#{artist} #{title} #{year} #{style}"
 
     if response.code == "200"
       data = JSON.parse(response.body)
-      items = data['items']
-
+      items = data["items"]
+      puts items.first["snippet"]["publishedAt"]
+      suggestions = []
       if items && !items.empty?
-        # Extraction de l'identifiant unique de la vidéo
-        video_id = items.first['id']['videoId']
-        return "https://www.youtube.com/watch?v=#{video_id}"
+        # # Extraction de l"identifiant unique de la vidéo
+        items.each do |item|
+          video_id = item["id"]["videoId"]
+          video_url = "https://www.youtube.com/watch?v=#{video_id}"
+          title = item["snippet"]["title"]
+          photo_url = item["snippet"]["thumbnails"]["default"]["url"]
+          suggestions << { video_url: video_url, title: title, photo_url: photo_url }
+        end
+        return p suggestions
       end
     else
       # Si l'API renvoie autre chose que 200, on affiche le corps de l'erreur pour débugger
@@ -53,48 +60,50 @@ requete_recherche = "#{artist} #{title} #{year} #{style}"
   end
 end
 
-puts "Deleting Database...."
-Version.destroy_all
-Artist.destroy_all
-Song.destroy_all
+get_video_url("bob dylan", "knockin on heaven's door", 0, "cover")
 
-file = File.open "app/assets/data/random_tracks_seed_copy.json"
-tracks = JSON.load file
+# puts "Deleting Database...."
+# Version.destroy_all
+# Artist.destroy_all
+# Song.destroy_all
 
-puts "Creating New Database ....."
+# file = File.open "app/assets/data/random_tracks_seed_copy.json"
+# tracks = JSON.load file
 
-tracks.each do |track|
-  title = track["title"]
-  name = track["artist"]
-  year = track["year"]
-  style = track["style"]
+# puts "Creating New Database ....."
 
-  # On determine si la song est deja repertoriée
-  if Song.find_by(title: title) == nil
-    newSong = Song.new(title: title)
-    newSong.save!
-    puts "Song Created"
-  else
-    newSong = Song.find_by(title: title)
-  end
+# tracks.each do |track|
+#   title = track["title"]
+#   name = track["artist"]
+#   year = track["year"]
+#   style = track["style"]
 
-  # On determine si l'artist est deja repertoriée
-  if Artist.find_by(name: name) == nil
-    newArtist = Artist.new(name: name)
-    newArtist.save!
-    puts "Artist Created"
-  else
-    newArtist = Artist.find_by(name: name)
-  end
+#   # On determine si la song est deja repertoriée
+#   if Song.find_by(title: title) == nil
+#     newSong = Song.new(title: title)
+#     newSong.save!
+#     puts "Song Created"
+#   else
+#     newSong = Song.find_by(title: title)
+#   end
 
-  # On genere le lien youtube de la version
-  newLink = get_video_url(name, title, year, style)
+#   # On determine si l'artist est deja repertoriée
+#   if Artist.find_by(name: name) == nil
+#     newArtist = Artist.new(name: name)
+#     newArtist.save!
+#     puts "Artist Created"
+#   else
+#     newArtist = Artist.find_by(name: name)
+#   end
 
-  newVersion = Version.new(style: style, year: year, version_url: newLink)
-  newVersion.song = newSong
-  newVersion.artist = newArtist
-  newVersion.save!
-  puts "Version Created"
-end
+#   # On genere le lien youtube de la version
+#   newLink = get_video_url(name, title, year, style)
 
-puts "Finished database Seed"
+#   newVersion = Version.new(style: style, year: year, version_url: newLink)
+#   newVersion.song = newSong
+#   newVersion.artist = newArtist
+#   newVersion.save!
+#   puts "Version Created"
+# end
+
+# puts "Finished database Seed"

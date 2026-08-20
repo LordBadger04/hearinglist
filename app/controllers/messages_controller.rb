@@ -4,6 +4,9 @@ class MessagesController < ApplicationController
 
     Help users discover songs, artists and live cover versions.
 
+    You have access to tools:
+    - Check songs cover on youtube when a user ask for a cover.
+
     Answer clearly and concisely.
   PROMPT
 
@@ -19,6 +22,8 @@ class MessagesController < ApplicationController
 
       @ruby_llm_chat = RubyLLM.chat
       build_conversation_history
+
+      @ruby_llm_chat.with_tool(SearchCoverTool)
 
       response = @ruby_llm_chat
         .with_instructions(SYSTEM_PROMPT)
