@@ -9,7 +9,9 @@ class Message < ApplicationRecord
 
   MAX_USER_MESSAGES = 10
 
-  validate :user_message_limit, if: -> { role == "user" }
+  # `chat.present?` est indispensable : sans lui, un Message sans chat lève une
+  # NoMethodError au lieu de retourner l'erreur de validation "must exist".
+  validate :user_message_limit, if: -> { role == "user" && chat.present? }
 
   private
 
