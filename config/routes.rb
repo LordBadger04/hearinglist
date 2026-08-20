@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :bookmarks, only: [ :destroy ]
 
   resources :versions, only: [ :new, :create ]
+
   resources :chats, only: [ :create, :show ] do
     resources :messages, only: [ :create ]
   end

@@ -1,0 +1,36 @@
+<div class="new-list-page">
+  <div class="new-list-card">
+    <h1>Create a new version</h1>
+
+    <p class="new-list-subtitle">
+      Give your version a style.
+    </p>
+
+    <%= simple_form_for @version do |f| %>
+
+      <%= f.input :song, required: true,
+                  label: "Song title" %>
+
+      <%= f.input :artist, required: true,
+                  label: "Artist's name" %>
+
+      <%= f.input :style,
+                  label: "Version style",
+                  placeholder: "Cover" %>
+
+      <%= f.input :year,
+                  label: "Year",
+                  placeholder: "YYYY" %>
+
+      <%= f.input :version_url, required: true,
+                  label: "Youtube url",
+                  placeholder: "https://www.youtube.com/watch?v=H0bFoDOtAP8" %>
+
+      <%= f.submit "Create version", class: "btn btn-dark w-100" %>
+    <% end %>
+
+    <%= link_to "Back to my playlists",
+                lists_path,
+                class: "new-list-back" %>
+  </div>
+</div>
