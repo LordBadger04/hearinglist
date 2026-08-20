@@ -1,23 +1,73 @@
 .banner {
   position: relative;
+
+  min-height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem 6%;
+
   background-size: cover;
   background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 150px;
+
+  overflow: hidden;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
 }
 
 .banner h1 {
   margin: 0;
+
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 5em;
-  font-weight:semi-bold;
+
+  font-size: 3.2rem;
+  font-weight: 700;
+
+  letter-spacing: -0.03em;
+
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
 }
 
-.banner_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.banner .btn_top_right {
+  position: absolute;
+
+  top: 18px;
+  right: 6%;
+
+  padding: 0.7rem 1.1rem;
+
+  border-radius: 999px;
+
+  background-color: #1dd1a1;
+  border-color: #1dd1a1;
+
+  color: #111;
+
+  font-weight: 600;
+}
+
+.banner .btn_top_right:hover {
+  background-color: #18b98f;
+  border-color: #18b98f;
+
+  color: #111;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    min-height: 150px;
+
+    padding: 2rem 1.5rem;
+  }
+
+  .banner h1 {
+    font-size: 2.4rem;
+  }
+
+  .banner .btn_top_right {
+    top: 14px;
+    right: 1.5rem;
+  }
 }

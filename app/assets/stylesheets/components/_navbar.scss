@@ -1,21 +1,102 @@
 .hearing-navbar {
-  background-color: white;
-  border-bottom: 1px solid #ddd;
-  padding: 0.9rem 0;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+  padding: 0.5rem 0;
+
+  z-index: 1000;
+}
+
+.hearing-navbar .container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hearing-navbar h2 {
+  margin: 0;
+  line-height: 1;
 }
 
 .hearing-navbar-brand {
-  color: #222;
+  display: flex;
+  align-items: center;
+
+  color: #111;
   text-decoration: none;
+
+  font-size: 1.45rem;
   font-weight: 700;
-  font-size: 1.5rem;
+
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 .hearing-navbar-brand:hover {
-  color: #222;
+  color: #111;
+}
+
+.hearing-navbar .d-flex {
+  align-items: center;
+}
+
+.hearing-navbar form {
+  margin: 0;
 }
 
 .hearing-navbar .btn {
-  border-radius: 8px;
-  padding: 0.55rem 1rem;
+  border-radius: 999px;
+
+  padding: 0.6rem 1.1rem;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.hearing-navbar .btn-dark {
+  background-color: #111;
+  border-color: #111;
+}
+
+.hearing-navbar .btn-dark:hover {
+  background-color: #222;
+  border-color: #222;
+
+  transform: translateY(-1px);
+}
+
+.hearing-navbar .btn-outline-dark {
+  color: #111;
+
+  background-color: transparent;
+  border-color: #111;
+}
+
+.hearing-navbar .btn-outline-dark:hover {
+  color: white;
+
+  background-color: #111;
+  border-color: #111;
+}
+
+@media (max-width: 768px) {
+  .hearing-navbar {
+    padding: 0.4rem 0;
+  }
+
+  .hearing-navbar-brand {
+    font-size: 1.3rem;
+  }
+
+  .hearing-navbar .btn {
+    padding: 0.5rem 0.9rem;
+
+    font-size: 0.85rem;
+  }
 }
