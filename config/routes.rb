@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   resources :lists, except: [ :edit, :update ] do
     resources :bookmarks, only: [ :new, :create ]
   end
+  resources :bookmarks, only: [ :destroy ]
+
   resources :versions, only: [ :new, :create ]
   resources :chats, only: [ :create, :show ] do
     resources :messages, only: [ :create ]

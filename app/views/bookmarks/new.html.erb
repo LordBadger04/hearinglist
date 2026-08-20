@@ -1,19 +1,25 @@
-<div class="container auth-container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-md-8 col-lg-5">
-      <div class="card auth-card">
-        <div class="card-body">
-          <p class="auth-eyebrow">Add a bookmark</p>
+<div class="bookmark-page">
+  <div class="bookmark-card">
+    <p class="bookmark-eyebrow">Playlist</p>
 
-          <%= simple_form_for [@list, @bookmark] do |f| %>
-            <%= f.association :version,
-                              label: "Pick a track",
-                              label_method: ->(version) { version.song.title }%>
-            <%= f.button :submit, "Create bookmark", class: "btn btn-primary w-100 mt-3" %>
-          <% end %>
+    <h1>Add a song</h1>
 
-        </div>
-      </div>
-    </div>
+    <p class="bookmark-subtitle">
+      Choose a track to add to <strong><%= @list.title %></strong>.
+    </p>
+
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.association :version,
+                        label: "Pick a track",
+                        label_method: ->(version) { "#{version.song.title} — #{version.artist.name}" } %>
+
+      <%= f.button :submit,
+                   "Add to playlist",
+                   class: "btn bookmark-submit w-100 mt-3" %>
+    <% end %>
+
+    <%= link_to "Back to playlist",
+                list_path(@list),
+                class: "bookmark-back" %>
   </div>
 </div>
