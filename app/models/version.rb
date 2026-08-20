@@ -3,10 +3,10 @@ class Version < ApplicationRecord
   # Sans cette ligne, sauver type: "live" fait chercher une classe Live et plante.
   self.inheritance_column = nil
 
-  # Les trois seules valeurs presentes dans le seed
-  # (app/assets/data/random_tracks_seed_copy.json). Le formulaire de creation
-  # s'en sert pour construire son menu deroulant.
-  STYLES = %w[studio live acoustic].freeze
+  # Les seuls styles de version qu'on accepte. Reprend la liste ecrite dans la
+  # PR #9 (elle s'appelait KINDS a l'epoque, avant le renommage type -> style).
+  # Le seed n'utilise pour l'instant que studio / live / acoustic.
+  STYLES = %w[studio live acoustic remix cover demo remaster].freeze
 
   # Champs virtuels du formulaire de creation : l'utilisateur tape un titre et
   # un nom en texte libre, VersionsController les transforme en Song et Artist.
