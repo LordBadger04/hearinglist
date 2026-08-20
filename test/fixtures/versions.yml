@@ -1,13 +1,13 @@
 cohen_studio:
-  url: https://example.com/cohen-hallelujah
-  type: studio
+  version_url: https://example.com/cohen-hallelujah
+  style: studio
   year: 1984
   artist: cohen
   song: hallelujah
 
 buckley_cover:
-  url: https://example.com/buckley-hallelujah
-  type: cover
+  version_url: https://example.com/buckley-hallelujah
+  style: acoustic
   year: 1994
   artist: buckley
   song: hallelujah
