@@ -9,7 +9,7 @@
       <%= link_to "Add a song",
             new_list_bookmark_path(@list),
             class: "btn btn-success" %>
-            
+
       <%= link_to "Back to lists", lists_path, class: "btn btn-outline-dark" %>
 
       <%= link_to "Delete",
@@ -23,53 +23,65 @@
   </div>
 
   <% if @list.bookmarks.any? %>
-    <div class="song-cards">
-      <% @list.bookmarks.each do |bookmark| %>
-        <% version = bookmark.version %>
+  <div class="song-cards">
+    <% @list.bookmarks.each do |bookmark| %>
+      <% version = bookmark.version %>
 
-        <div class="song-card">
-          <div class="song-card-content">
-            <p class="song-card-label">LIVE VERSION</p>
+      <div class="song-card">
+        <div class="song-card-content">
+          <p class="song-card-label"><%= version.style&.upcase %> VERSION</p>
 
-            <h2><%= version.song.title %></h2>
+          <h2>
+            <%= link_to version.song.title,
+                        version.version_url,
+                        target: :blank,
+                        rel: "noopener",
+                        class: "stretched-link text-decoration-none text-dark" %>
+          </h2>
 
-            <p class="song-card-artist">
-              <%= version.artist.name %>
-            </p>
+          <p class="song-card-artist">
+            <%= version.artist.name %>
+          </p>
 
-            <div class="song-card-details">
-              <span><%= version.style %></span>
+          <div class="song-card-details">
+            <span><%= version.style %></span>
 
-              <% if version.year.present? %>
-                <span><%= version.year %></span>
-              <% end %>
-            </div>
-          </div>
-
-          <div class="song-card-actions">
-            <div class="song-card-icon">
-              ♪
-            </div>
-
-            <%= link_to "×",
-                        bookmark_path(bookmark),
-                        data: {
-                          turbo_method: :delete,
-                          turbo_confirm: "Remove this song from the playlist?"
-                        },
-                        class: "song-card-delete" %>
+            <% if version.year.present? %>
+              <span><%= version.year %></span>
+            <% end %>
           </div>
         </div>
-      <% end %>
-    </div>
-  <% else %>
-    <div class="list-show-empty">
-      <h2>Your saved songs will appear here</h2>
 
-      <p>
-        Add songs and live covers to this playlist from HearingList.
-      </p>
-    </div>
-  <% end %>
+        <div class="song-card-actions">
+          <div class="song-card-icon">♪</div>
+
+          <%= link_to "×",
+                      bookmark_path(bookmark),
+                      data: {
+                        turbo_method: :delete,
+                        turbo_confirm: "Remove this song from the playlist?"
+                      },
+                      class: "song-card-delete" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="list-show-empty">
+    <h2>Your saved songs will appear here</h2>
+
+    <p>
+      Add songs and live covers to this playlist from HearingList.
+    </p>
+  </div>
+<% end %>
 
 </div>
+<style>
+  .song-card-link {
+    display: block;
+    text-text-decoration: none;
+    color: inherit;
+    width: 100%;
+  }
+</style>
