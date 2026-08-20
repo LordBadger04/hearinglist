@@ -32,6 +32,12 @@
     </header>
 
     <main id="main-content">
+      <% if notice %>
+        <div class="alert alert-success" role="status"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+        <div class="alert alert-danger" role="alert"><%= alert %></div>
+      <% end %>
       <%= yield %>
     </main>
   </body>

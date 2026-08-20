@@ -1,0 +1,39 @@
+<div class="banner banner--sm"
+     style="background-image: linear-gradient(135deg, #0E0000 0%, #2b2b2b 55%, #1EDD88 160%);">
+  <h1>New version</h1>
+</div>
+
+<section class="form_card" aria-labelledby="new-version-heading">
+  <h2 id="new-version-heading" class="form_card__title">Add it to the catalog</h2>
+  <p class="form_card__subtitle">A version is one track, by one artist, in one style. Missing one? Create it here.</p>
+
+  <%= simple_form_for @version, html: { class: "form_card__form" } do |f| %>
+    <%= f.error_notification message: "Something went wrong, please check the fields below." %>
+
+    <%= hidden_field_tag :list_id, @list.id if @list %>
+
+    <%= f.input :song_title,
+                label: "Track title",
+                placeholder: "e.g. Hallelujah",
+                input_html: { autofocus: true } %>
+
+    <%= f.input :artist_name,
+                label: "Artist",
+                placeholder: "e.g. Jeff Buckley" %>
+
+    <%= f.input :year,
+                label: "Year",
+                placeholder: Date.current.year.to_s,
+                hint: "Optional. #{Version::FIRST_RECORDING_YEAR} or later." %>
+
+    <%= f.input :style,
+                label: "Style",
+                collection: Version::STYLES.map { |style| [style.capitalize, style] },
+                include_blank: "Pick a style" %>
+
+    <div class="form_card__actions">
+      <%= f.submit "Add version", class: "btn btn-success" %>
+      <%= link_to "Cancel", (@list ? list_path(@list) : root_path), class: "form_card__cancel" %>
+    </div>
+  <% end %>
+</section>

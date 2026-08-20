@@ -7,6 +7,7 @@
   <%= link_to "Back to lists", lists_path, class: "btn btn-danger btn btn_top_left" %>
   <div class="container_center">
     <%= link_to "Create a bookmark", new_list_bookmark_path(@list.id), class: "btn btn-success " %>
+    <%= link_to "Add a new version", new_version_path(list_id: @list.id), class: "btn btn-outline-success" %>
   </div>
 </div>
 <div class="test"></div>
