@@ -6,19 +6,27 @@
     </div>
 
     <div class="list-show-actions">
-      <%= link_to "Add a song",
-            new_list_bookmark_path(@list),
-            class: "btn btn-success" %>
-            
-      <%= link_to "Back to lists", lists_path, class: "btn btn-outline-dark" %>
+      <%= link_to new_list_bookmark_path(@list),
+                  class: "btn btn-success" do %>
+        <i class="fa-solid fa-plus me-2"></i>
+        Add a song
+      <% end %>
 
-      <%= link_to "Delete",
-                  list_path(@list),
+      <%= link_to lists_path,
+                  class: "btn btn-outline-dark" do %>
+        <i class="fa-solid fa-arrow-left me-2"></i>
+        Back to lists
+      <% end %>
+
+      <%= link_to list_path(@list),
                   data: {
                     turbo_method: :delete,
                     turbo_confirm: "Delete this list?"
                   },
-                  class: "btn btn-dark" %>
+                  class: "btn btn-dark" do %>
+        <i class="fa-solid fa-trash me-2"></i>
+        Delete
+      <% end %>
     </div>
   </div>
 
@@ -51,13 +59,14 @@
               ♪
             </div>
 
-            <%= link_to "×",
-                        bookmark_path(bookmark),
+            <%= link_to bookmark_path(bookmark),
                         data: {
                           turbo_method: :delete,
                           turbo_confirm: "Remove this song from the playlist?"
                         },
-                        class: "song-card-delete" %>
+                        class: "song-card-delete" do %>
+              <i class="fa-solid fa-trash"></i>
+            <% end %>
           </div>
         </div>
       <% end %>
