@@ -5,5 +5,16 @@
     </strong>
 
     <p><%= message.content %></p>
+
+    <% if message.suggestions.present? %>
+      <div class="cover-suggestions">
+        <% message.suggestions.each do |s| %>
+          <%= link_to s["video_url"], target: "_blank", rel: "noopener", class: "cover-card" do %>
+            <%= image_tag s["photo_url"], alt: s["title"], loading: "lazy" %>
+            <span><%= CGI.unescapeHTML(s["title"]) %></span>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>

@@ -1,0 +1,34 @@
+.cover-suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  margin-top: .75rem;
+}
+
+.cover-card {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .5rem;
+  border-radius: .5rem;
+  background: #4a3535;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    background: #ececec;
+  }
+
+  img {
+    width: 120px;
+    height: 68px;
+    object-fit: cover;
+    border-radius: .35rem;
+    flex-shrink: 0;
+  }
+
+  span {
+    font-size: .9rem;
+    line-height: 1.3;
+  }
+} 

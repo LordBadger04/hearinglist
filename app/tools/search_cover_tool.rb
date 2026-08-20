@@ -8,10 +8,17 @@ class SearchCoverTool < RubyLLM::Tool
   description "Searches song cover by title."
   param :song_title, desc: "The keyword to search for"
 
-  def execute(song_title:)
-    get_video_info(song_title)
+  attr_reader :results
+
+  def initialize
+    @results = []
   end
 
+  def execute(song_title:)
+    found = get_video_info(song_title) || []
+    @results.concat(found)
+    found
+  end
 
   def get_video_info(title)
     requete_recherche = "#{title} Cover"
