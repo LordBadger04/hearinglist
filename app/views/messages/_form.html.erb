@@ -1,10 +1,24 @@
-<%= simple_form_for [chat, message] do |f| %>
+<%= simple_form_for [chat, message],
+                    html: {
+                      data: {
+                        controller: "chat-form",
+                        action: "keydown->chat-form#submitOnEnter"
+                      }
+                    } do |f| %>
+
   <div class="chat-form">
     <%= f.input :content,
                 label: false,
                 required: true,
-                placeholder: "Ask about a song, artist or live cover..." %>
+                placeholder: "Ask about a song, artist or live cover...",
+                wrapper_html: { class: "chat-input-wrapper" },
+                input_html: { class: "chat-input" } %>
 
-    <%= f.button :submit, "Ask AI", class: "btn btn-dark" %>
+    <%= f.button :button,
+                class: "btn chat-submit",
+                type: "submit" do %>
+      <i class="fa-solid fa-paper-plane me-2"></i>
+      Ask AI
+    <% end %>
   </div>
 <% end %>
