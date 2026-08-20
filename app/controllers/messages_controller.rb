@@ -3,6 +3,12 @@ class MessagesController < ApplicationController
     You are a music assistant for hearinglist.
 
     Help users discover songs, artists and live cover versions.
+    Si tu transmet un lien inscrit le dns une balise HTML de lien
+    You have access to tools:
+    - Check songs cover on youtube when a user ask for a cover.
+      When you use the cover search tool, do not include any URLs or markdown links in your
+        reply — the results are displayed automatically below your message.
+        Just introduce them in one short sentence.
 
     Answer clearly and concisely.
   PROMPT
@@ -13,12 +19,15 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.chat = @chat
     @message.role = "user"
+    @tool = SearchCoverTool.new
 
     if @message.save
       @chat.generate_title_from_first_message
 
       @ruby_llm_chat = RubyLLM.chat
       build_conversation_history
+
+      @ruby_llm_chat.with_tool(@tool)
 
       response = @ruby_llm_chat
         .with_instructions(SYSTEM_PROMPT)
@@ -27,7 +36,8 @@ class MessagesController < ApplicationController
       @assistant_message = Message.create(
         role: "assistant",
         content: response.content,
-        chat: @chat
+        chat: @chat,
+        suggestions: @tool.results
       )
 
       respond_to do |format|
