@@ -6,8 +6,9 @@ require "uri"
 API_KEY = "AIzaSyBMdktqJSP5gKDX7yRbyBbboxQjoWthpIA"
 
 class SearchCoverTool < RubyLLM::Tool
-  description "Searches song cover by title."
-  param :song_title, desc: "The keyword to search for"
+  description "Searches song on youtube by title, and keyword."
+  param :query, desc: "The keyword to search for"
+  param :song_title, desc: "The title of the song"
 
   attr_reader :results
 
@@ -15,15 +16,14 @@ class SearchCoverTool < RubyLLM::Tool
     @results = []
   end
 
-  def execute(song_title:)
-    found = get_video_info(song_title) || []
+  def execute(song_title:, query:)
+    found = get_video_info(song_title, query) || []
     @results.concat(found)
     found
   end
 
-  def get_video_info(title)
-    requete_recherche = "#{title} Cover"
-    p requete_recherche
+  def get_video_info(title, keyword)
+    requete_recherche = "#{title} #{keyword}"
     # CORRECTION ICI : L"URL complète attendue par l"API Google
     base_url = "https://www.googleapis.com/youtube/v3/search"
 
@@ -55,7 +55,6 @@ class SearchCoverTool < RubyLLM::Tool
             suggestions << { video_url: video_url, title: title, photo_url: photo_url }
           end
           return suggestions
-          #return items
         end
       else
         # Si l"API renvoie autre chose que 200, on affiche le corps de l"erreur pour débugger

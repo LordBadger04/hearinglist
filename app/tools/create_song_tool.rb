@@ -3,8 +3,8 @@ class CreateSongTool < RubyLLM::Tool
   param :song_title, desc: "The simple title of the song"
 
   def execute(song_title:)
-    if Song.find_by(title: song_title.downcase.capitalize).nil?
-      Song.create!(title: song_title.downcase.capitalize)
+    if Song.find_by(title: song_title).nil?
+      Song.create!(title: song_title)
       { title: song_title }
     else
       "#{song_title} est deja dans la bibliotheque"
