@@ -11,6 +11,7 @@ class MessagesController < ApplicationController
         Just introduce them in one short sentence.
     - Create an artist if the user ask. Do not create multiple artists.
     - Create an song if the user ask. Do not create multiple songs.
+    - Create a version if the user ask. Do not create multiple version.
     Answer clearly and concisely.
   PROMPT
 
@@ -31,6 +32,10 @@ class MessagesController < ApplicationController
       @ruby_llm_chat.with_tool(@tool)
       @ruby_llm_chat.with_tool(CreateArtistTool)
       @ruby_llm_chat.with_tool(CreateSongTool)
+      # @ruby_llm_chat.with_tool(SearchSongTool)
+      # @ruby_llm_chat.with_tool(SearchArtistTool)
+      @ruby_llm_chat.with_tool(CreateVersionTool)
+
 
       response = @ruby_llm_chat
         .with_instructions(SYSTEM_PROMPT)
