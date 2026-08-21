@@ -2,7 +2,7 @@
   <div class="bookmark-card">
     <p class="bookmark-eyebrow">Playlist</p>
 
-    <h1>Add a song</h1>
+    <h1>Add a Version</h1>
 
     <p class="bookmark-subtitle">
       Choose a track to add to <strong><%= @list.title %></strong>.
@@ -11,7 +11,7 @@
     <%= simple_form_for [@list, @bookmark] do |f| %>
       <%= f.association :version,
                         label: "Pick a track",
-                        label_method: ->(version) { "#{version.song.title} — #{version.artist.name}" } %>
+                        label_method: ->(version) { "#{version.song.title} — #{version.artist.name} - #{version.style}" } %>
 
       <%= f.button :submit,
                    "Add to playlist",
