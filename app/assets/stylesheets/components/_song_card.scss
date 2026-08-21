@@ -1,5 +1,5 @@
 .song-card {
-  position: relative;      // this must be the anchor
+  position: relative;
   padding: 1.5rem;
   display: flex;
   align-items: center;
@@ -13,12 +13,12 @@
 }
 
 .song-card-actions {
-  position: static;        // NOT relative — that's what's breaking it
+  position: static;
   z-index: 2;
 }
 
 .song-card-icon {
-  position: static;        // make sure this isn't relative either
+  position: static;
   width: 56px;
   height: 56px;
   border-radius: 50%;
