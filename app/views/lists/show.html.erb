@@ -1,18 +1,26 @@
 <div class="list-show-page"
      style="background-image:
        linear-gradient(rgba(248, 248, 248, 0.70), rgba(238, 238, 238, 0.92)),
-       url('<%= cl_image_path @list.photo.key %>');">  <div class="list-show-header">
+       url('<%= cl_image_path @list.photo.key %>');">
+         <div class="list-show-header">
+
     <div>
       <p class="list-show-label">Playlist</p>
-      <h1><%= @list.title %></h1>
+      <div class="d-flex">
+        <div class="list-show-action">
+          <h1><%= @list.title %></h1>
+        </div>
+        <div class="list-show-title">
+          <%= link_to new_list_bookmark_path(@list),
+                      class: "btn btn-success mx-4" do %>
+            <i class="fa-solid fa-plus me-2"></i>
+            Add a version
+          <% end %>
+        </div>
+      </div>
     </div>
 
     <div class="list-show-actions">
-      <%= link_to new_list_bookmark_path(@list),
-                  class: "btn btn-success" do %>
-        <i class="fa-solid fa-plus me-2"></i>
-        Add a version
-      <% end %>
 
       <%= link_to lists_path,
                   class: "btn btn-outline-dark" do %>
