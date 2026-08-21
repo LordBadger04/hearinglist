@@ -33,7 +33,7 @@ class SearchCoverTool < RubyLLM::Tool
       q: requete_recherche,
       type: "video",
       videoCategoryId: "10",
-      maxResults: 2,
+      maxResults: 3,
       key: API_KEY,
       order: "relevance"
     })
