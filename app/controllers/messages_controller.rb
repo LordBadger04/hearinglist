@@ -10,6 +10,7 @@ class MessagesController < ApplicationController
         reply — the results are displayed automatically below your message.
         Just introduce them in one short sentence.
     - Create an artist if the user ask. Do not create multiple artists.
+    - Create an song if the user ask. Do not create multiple songs.
     Answer clearly and concisely.
   PROMPT
 
@@ -29,7 +30,7 @@ class MessagesController < ApplicationController
 
       @ruby_llm_chat.with_tool(@tool)
       @ruby_llm_chat.with_tool(CreateArtistTool)
-
+      @ruby_llm_chat.with_tool(CreateSongTool)
 
       response = @ruby_llm_chat
         .with_instructions(SYSTEM_PROMPT)
