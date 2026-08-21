@@ -9,20 +9,23 @@
 
     <% if user_signed_in? %>
       <%= link_to "All my lists", lists_path, class: "btn btn-dark me-2" %>
+      <%= link_to "Create a new version", new_version_path, class: "btn btn-dark" %>
     <% else %>
       <%= link_to "Login", new_user_session_path, class: "btn btn-dark" %>
     <% end %>
   </div>
 
-  <div class="home-card">
-    <h2>Discover new versions</h2>
+  <%= link_to chats_path, data: { turbo_method: :post } do %>
+    <div class="home-card">
+      <h2>Discover new versions</h2>
 
-    <p>
-      Ask HearingList about a song or an artist and explore live covers.
-    </p>
+      <p>
+        Ask HearingList about a song or an artist and explore live covers.
+      </p>
 
-    <div class="music-icon">
-      ♪
+      <div class="music-icon">
+        ♪
+      </div>
     </div>
-  </div>
+  <% end %>
 </section>
