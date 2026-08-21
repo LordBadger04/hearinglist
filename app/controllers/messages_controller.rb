@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
     You are a music assistant for hearinglist.
 
     Help users discover songs, artists and live cover versions.
-    Si tu transmet un lien inscrit le dns une balise HTML de lien
+
     You have access to tools:
     - Check songs cover on youtube when a user ask for a cover.
       When you use the cover search tool, do not include any URLs or markdown links in your
@@ -13,6 +13,7 @@ class MessagesController < ApplicationController
     - Create an song if the user ask. Do not create multiple songs.
     - Create a version if the user ask. Do not create multiple version.
     Answer clearly and concisely.
+
   PROMPT
 
   def create
@@ -32,9 +33,8 @@ class MessagesController < ApplicationController
       @ruby_llm_chat.with_tool(@tool)
       @ruby_llm_chat.with_tool(CreateArtistTool)
       @ruby_llm_chat.with_tool(CreateSongTool)
-      # @ruby_llm_chat.with_tool(SearchSongTool)
-      # @ruby_llm_chat.with_tool(SearchArtistTool)
       @ruby_llm_chat.with_tool(CreateVersionTool)
+
 
 
       response = @ruby_llm_chat
